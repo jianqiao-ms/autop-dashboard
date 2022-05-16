@@ -1,0 +1,20 @@
+// Bootstrap-icons
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+// Bootstrap Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "~bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+body {
+  @extend .bg-light;
+  @extend .vh-100;
+}
+
+div#root {
+  @extend .h-100;
+}

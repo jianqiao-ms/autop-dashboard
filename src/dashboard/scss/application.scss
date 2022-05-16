@@ -1,0 +1,52 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap CSS as needed
+@import "~bootstrap/scss/utilities";
+//@import "~bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/images";
+//@import "~bootstrap/scss/containers";
+//@import "~bootstrap/scss/grid";
+//@import "~bootstrap/scss/helpers";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
+
+// 6. Add additional custom code here
+$nav-bar-height: calc(#{$nav-link-height} + #{$navbar-padding-y} * 2);
+$application-detail-title-height: calc(#{$h4-font-size} * #{$line-height-base} + #{$spacer} * 2);
+$tablist-height: calc(#{$nav-link-height} + #{$border-width});
+
+table {
+  td {
+    i.bi {
+      cursor: pointer;
+      &:hover {
+        @extend .text-primary;
+      }
+    }
+  }
+}
+
+div#applicationRoot {
+  height: calc(100vh - #{$nav-bar-height});
+
+  div.d-flex:nth-child(2) {
+    height: calc(100% - #{$application-detail-title-height});
+    div.tab-content#applicationTabContent {
+      @extend .bg-white;
+      height: calc(100% - #{$tablist-height});
+    }
+  }
+}

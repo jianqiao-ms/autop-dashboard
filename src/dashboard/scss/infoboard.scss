@@ -1,0 +1,54 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap CSS as needed
+@import "~bootstrap/scss/utilities";
+//@import "~bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/images";
+//@import "~bootstrap/scss/containers";
+//@import "~bootstrap/scss/grid";
+//@import "~bootstrap/scss/helpers";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
+
+// 6. Add additional custom code here
+
+#infoBoard.container {
+  div.row:nth-child(2) {
+    [class^=col] {
+      &:not(:last-child) {
+        @extend .border-end;
+      }
+
+      .position-relative {
+        &:hover {
+          span.fw-light {
+            @extend .text-primary;
+          }
+        }
+      }
+
+      //&:after {
+      //  content: "";
+      //  display: block;
+      //  padding-bottom: 50%;
+      //}
+      //div.d-flex.position-absolute {
+      //  width: calc(100% - var(--bs-gutter-x) * 2);
+      //  height: calc(100% - var(--bs-gutter-x));
+      //}
+    }
+  }
+}
